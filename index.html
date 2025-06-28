@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkPick – L'outil des parieurs</title>
+  <meta name="description" content="ThinkPick révolutionne les paris sportifs avec une approche basée sur la donnée, les statistiques, et la précision." />
+
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="assets/logo_only-removebg-preview.png" alt="Logo ThinkPick" class="logo-icon" />
+      <img src="assets/text_only-removebg-preview.png" alt="Texte ThinkPick" class="logo-text" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#features">Fonctionnalités</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>L'outil des parieurs</h1>
+      <p>Des données fiables. Des décisions solides. Un seul outil pour tout parier.</p>
+      <div class="cta">
+        <a href="#features" class="btn">📱 Essayez la démo</a>
+      </div>
+    </div>
+    <div class="gradient-bg"></div>
+  </header>
+
+  <!-- Bulle 1 -->
+  <div id="bubble-1" class="scroll-bubble placeholder"></div>
+
+  <section id="about" class="section">
+    <!-- Bulle 2 -->
+    <div id="bubble-2" class="scroll-bubble placeholder"></div>
+    <h2>Notre mission</h2>
+    <p>
+      ThinkPick a été conçu pour répondre à un besoin simple : 
+      <strong>faire gagner du temps aux parieurs</strong> tout en leur donnant un 
+      <strong>avantage stratégique</strong>.<br/><br/>
+      Plus besoin d'alterner entre un site de stats et un bookmaker. 
+      ThinkPick rassemble <strong>les données de performance</strong> et <strong>les cotes de paris</strong> dans une seule application fluide.
+    </p>
+  </section>
+
+  <section id="features" class="section">
+    <!-- Bulle 3 -->
+    <div id="bubble-3" class="scroll-bubble placeholder"></div>
+    <h2>Fonctionnalités</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-title">🧠 Analyse intelligente</div>
+        <div class="feature-hover">
+          Accédez instantanément aux stats clés avant de parier :<br/>
+          points, passes, rebonds, historique vs équipe adverse,<br/>
+          forme récente.<br/><br/>
+          ⏱️ Le but : gagner du temps + prendre de meilleures décisions.
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-title">📊 Filtres ultra-ciblés</div>
+        <div class="feature-hover">
+          Comparez les stats de vos joueurs par type de pari :<br/>
+          over/under, passes, rebonds, points...<br/><br/>
+          Adaptez votre stratégie à leur forme, leur adversaire, leur tendance.
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-title">📈 Comparateur de cotes</div>
+        <div class="feature-hover">
+          Visualisez les différences de cotes proposées par différents bookmakers.<br/>
+          Une même performance peut rapporter plus selon le site choisi.<br/><br/>
+          ThinkPick vous aide à repérer l'opportunité la plus rentable.
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-title">📱 Tout-en-un mobile</div>
+        <div class="feature-hover">
+          Une interface mobile fluide, moderne, sans fioritures.<br/>
+          Retrouvez tout ce dont vous avez besoin pour parier intelligemment,<br/>
+          sans changer d’application.
+        </div>
+      </div>
+      <div class="feature-box features-cta">
+        <a href="demo.html" class="features-link">
+          ▶️ Clique pour essayer la démo interactive !
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq section">
+    <!-- Bulle 4 -->
+    <div id="bubble-4" class="scroll-bubble placeholder"></div>
+    <h2>FAQ</h2>
+    <details>
+      <summary>📲 Quand l’app sera-t-elle disponible ?</summary>
+      <p>L’application sera lancée très prochainement sur iOS et Android. Une annonce sera faite sur ce site.</p>
+    </details>
+    <details>
+      <summary>💸 Est-ce que ThinkPick est payant ?</summary>
+      <p>L’application est gratuite à l’usage. Des fonctionnalités premium arriveront plus tard.</p>
+    </details>
+    <details>
+      <summary>⚖️ Est-ce légal ?</summary>
+      <p>Oui. ThinkPick ne propose pas de pari en soi mais des statistiques. Les cotes sont issues de bookmakers légaux.</p>
+    </details>
+  </section>
+
+  <section id="contact" class="contact section">
+    <!-- Bulle 5 -->
+    <div id="bubble-5" class="scroll-bubble placeholder"></div>
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/xdoqkzjg" method="POST">
+      <input type="text" name="name" placeholder="Votre nom" required />
+      <input type="email" name="_replyto" placeholder="Votre email" required />
+      <textarea name="message" placeholder="Votre message…" required></textarea>
+      <button type="submit" class="button">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p style="text-align: center;">&copy; 2025 ThinkPick. Tous droits réservés.</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
