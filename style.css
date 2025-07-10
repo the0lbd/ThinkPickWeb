@@ -310,7 +310,8 @@ section.in-view {
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-top: 4rem;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .feature-box {
@@ -323,9 +324,8 @@ section.in-view {
   overflow: hidden;
   cursor: pointer;
   group: hover;
-  flex: 1;
-  min-width: 280px;
-  max-width: 300px;
+  flex: 0 1 calc(25% - 1.125rem);
+  min-width: 250px;
 }
 
 .feature-box::before {
@@ -383,11 +383,12 @@ section.in-view {
 }
 
 .features-cta {
-  flex-basis: 100%;
+  flex: 1 1 100%;
   background: var(--gradient-1);
   border: none;
   text-align: center;
   margin-top: 2rem;
+  order: 5;
 }
 
 .features-cta .features-link {
@@ -410,6 +411,10 @@ section.in-view {
   border-radius: 32px;
   margin: 4rem 0;
   text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4rem 2rem;
 }
 
 details {
@@ -420,9 +425,7 @@ details {
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   margin-bottom: 1rem;
 }
 
