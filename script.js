@@ -192,7 +192,7 @@ document.getElementById("contact-form")?.addEventListener("submit", function(e) 
     message: form.message.value,
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbyWy7T8cUsZqyL9qYCIrnvF3o-2nBrpJZWb2vMIK9278iuKhsLs6JylyM0vwEmXgh99xA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwUpxK6PmQkYoJFF1QiHo0a0MBAe22Xsw3tDW7v2K7noCp22y2I_ldYU6QQSwB84ps-WQ/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
