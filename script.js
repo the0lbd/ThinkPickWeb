@@ -191,7 +191,7 @@ document.getElementById("contact-form")?.addEventListener("submit", function(e) 
   formData.append("email", form.email.value);
   formData.append("message", form.message.value);
 
-  fetch("https://script.google.com/macros/s/AKfycbzIV8AqLWr6bo9tvxo8bUsZfdyeJ5yqB6fmsU7W4zHlrdWLYzHBY6YwjPwErcKBLym-VA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbyFNs1G9a6CTJS7Hh72jcAHQezdBXaH5PugsT1PW3jBA7f4uglU0YIfBmbVcS_y6ebUOg/exec", {
     method: "POST",
     body: formData
   })
