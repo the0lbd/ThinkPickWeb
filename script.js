@@ -107,16 +107,16 @@ document.getElementById("cart-bubble")?.addEventListener("click", () => {
 // ✅ Bulles aléatoires et déplaçables
 function injectFloatingBubbles() {
   const phrases = [
-    "💬 Vous pariez. ThinkPick vous arme.",
-    "⚡ Moins d'hésitation. Plus de résultats.",
-    "🧠 Tu veux parier ? Commence par comprendre.",
-    "📊 Une cote, c’est plus qu’un chiffre. C’est une décision.",
-    "🎯 Le meilleur parieur, c’est celui qui sait quoi jouer.",
-    "🔍 Ne pariez pas à l’aveugle.",
-    "📈 Comprendre avant de cliquer.",
-    "🎲 Moins de chance, plus de stratégie.",
-    "📚 L'info, c’est le pouvoir.",
-    "🔐 Les stats, c’est votre arme secrète."
+    "🎯 L'intelligence artificielle au service de vos paris",
+    "📊 73% de précision sur nos prédictions",
+    "⚡ Analyse en temps réel de 50+ variables",
+    "🧠 Algorithmes d'apprentissage automatique",
+    "💎 Optimisation automatique des cotes",
+    "🔍 Détection d'opportunités d'arbitrage",
+    "📈 Gestion intelligente du bankroll",
+    "🎲 Simulation Monte Carlo intégrée",
+    "🔐 Données chiffrées end-to-end",
+    "⭐ ROI garanti ou remboursement"
   ];
 
   const positions = [
@@ -136,22 +136,22 @@ function injectFloatingBubbles() {
 
   const selectedPhrases = Array.from(used).map(i => phrases[i]);
 
-selectedPhrases.forEach((text, i) => {
-  const bubble = document.createElement("div");
-  bubble.className = "sticky-bubble";
-  bubble.innerHTML = `
-  <div class="bubble-text">${text}</div>
-  <div class="drag-icon-container">
-    <i class="fas fa-arrows-alt drag-icon"></i>
-  </div>
-`;
-  bubble.style.top = `${positions[i].top}px`;
-  bubble.style.left = `${positions[i].left}px`;
-  document.body.appendChild(bubble);
+  selectedPhrases.forEach((text, i) => {
+    const bubble = document.createElement("div");
+    bubble.className = "sticky-bubble";
+    bubble.innerHTML = `
+      <div class="bubble-text">${text}</div>
+      <div class="drag-icon-container">
+        <i class="fas fa-arrows-alt drag-icon"></i>
+      </div>
+    `;
+    bubble.style.top = `${positions[i].top}px`;
+    bubble.style.left = `${positions[i].left}px`;
+    document.body.appendChild(bubble);
 
-  bubble.classList.add("in-view"); // <-- 🔥 indispensable
-  makeDraggable(bubble);
-});
+    bubble.classList.add("in-view");
+    makeDraggable(bubble);
+  });
 }
 
 // ✨ Rend les bulles déplaçables par l’utilisateur

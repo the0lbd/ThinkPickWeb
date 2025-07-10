@@ -21,14 +21,23 @@ export function renderMockView() {
   matchHeader.innerHTML = `
     <div style="display: flex; justify-content: space-between; font-weight: bold;">
       <div style="text-align: left;">
-        Lakers<br/><span style="font-weight: normal;">Los Angeles</span>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div style="width: 32px; height: 32px; background: #552583; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FDB927; font-weight: bold; font-size: 0.8rem;">LAL</div>
+          <div>Lakers<br/><span style="font-weight: normal; color: #a0a0a0;">Los Angeles</span></div>
+        </div>
       </div>
-      <div style="font-size: 1.2rem;">02:30</div>
+      <div style="font-size: 1.2rem; color: #00d4aa; font-weight: 600;">
+        <div style="font-size: 0.8rem; color: #a0a0a0;">Aujourd'hui</div>
+        02:30
+      </div>
       <div style="text-align: right;">
-        Celtics<br/><span style="font-weight: normal;">Boston</span>
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-direction: row-reverse;">
+          <div style="width: 32px; height: 32px; background: #007A33; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.8rem;">BOS</div>
+          <div>Celtics<br/><span style="font-weight: normal; color: #a0a0a0;">Boston</span></div>
+        </div>
       </div>
     </div>
-    <hr style="margin: 1rem 0; border: 0; border-top: 1px dotted #555;" />
+    <div style="margin: 1rem 0; height: 1px; background: linear-gradient(90deg, transparent, #00d4aa, transparent);"></div>
   `;
   content.appendChild(matchHeader);
 
@@ -49,7 +58,7 @@ export function renderMockView() {
 
     const arrow = document.createElement("span");
     arrow.className = "arrow-right";
-    arrow.textContent = "➤";
+    arrow.innerHTML = '<i class="fas fa-chart-line"></i>';
     arrow.onclick = () => openPopup(stat);
 
     title.appendChild(spanTitle);
@@ -63,8 +72,11 @@ export function renderMockView() {
     const overBlock = document.createElement("div");
     overBlock.className = "block";
     overBlock.innerHTML = `
-      <div>Plus de ${bet.over.value}</div>
-      <div class="odds">Cote : ${formatOdds(bet.over.odds)}</div>
+      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <i class="fas fa-arrow-up" style="color: #00d4aa;"></i>
+        <span>Plus de ${bet.over.value}</span>
+      </div>
+      <div class="odds">${formatOdds(bet.over.odds)}</div>
     `;
     overBlock.onclick = () =>
       toggleBet(overBlock, `${playerLabel} – Plus de ${bet.over.value}`, bet.over.odds);
@@ -72,8 +84,11 @@ export function renderMockView() {
     const underBlock = document.createElement("div");
     underBlock.className = "block";
     underBlock.innerHTML = `
-      <div>Moins de ${bet.under.value}</div>
-      <div class="odds">Cote : ${formatOdds(bet.under.odds)}</div>
+      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <i class="fas fa-arrow-down" style="color: #fd79a8;"></i>
+        <span>Moins de ${bet.under.value}</span>
+      </div>
+      <div class="odds">${formatOdds(bet.under.odds)}</div>
     `;
     underBlock.onclick = () =>
       toggleBet(underBlock, `${playerLabel} – Moins de ${bet.under.value}`, bet.under.odds);
@@ -110,8 +125,11 @@ export function renderMockView() {
         const block = document.createElement("div");
         block.className = "block";
         block.innerHTML = `
-          <div>${opt.label}</div>
-          <div class="odds">Cote : ${formatOdds(opt.odds)}</div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <i class="fas fa-trophy" style="color: #fdcb6e;"></i>
+            <span>${opt.label}</span>
+          </div>
+          <div class="odds">${formatOdds(opt.odds)}</div>
         `;
         block.onclick = () =>
           toggleBet(block, `${teamLabel} – ${opt.label}`, opt.odds);
@@ -122,8 +140,11 @@ export function renderMockView() {
       const over = document.createElement("div");
       over.className = "block";
       over.innerHTML = `
-        <div>Plus de ${bet.over.value}</div>
-        <div class="odds">Cote : ${formatOdds(bet.over.odds)}</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <i class="fas fa-arrow-up" style="color: #00d4aa;"></i>
+          <span>Plus de ${bet.over.value}</span>
+        </div>
+        <div class="odds">${formatOdds(bet.over.odds)}</div>
       `;
       over.onclick = () =>
         toggleBet(over, `${teamLabel} – Plus de ${bet.over.value}`, bet.over.odds);
@@ -131,8 +152,11 @@ export function renderMockView() {
       const under = document.createElement("div");
       under.className = "block";
       under.innerHTML = `
-        <div>Moins de ${bet.under.value}</div>
-        <div class="odds">Cote : ${formatOdds(bet.under.odds)}</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <i class="fas fa-arrow-down" style="color: #fd79a8;"></i>
+          <span>Moins de ${bet.under.value}</span>
+        </div>
+        <div class="odds">${formatOdds(bet.under.odds)}</div>
       `;
       under.onclick = () =>
         toggleBet(under, `${teamLabel} – Moins de ${bet.under.value}`, bet.under.odds);
