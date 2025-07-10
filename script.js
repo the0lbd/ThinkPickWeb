@@ -139,7 +139,12 @@ function injectFloatingBubbles() {
 selectedPhrases.forEach((text, i) => {
   const bubble = document.createElement("div");
   bubble.className = "sticky-bubble";
-  bubble.textContent = text;
+  bubble.innerHTML = `
+  <div class="bubble-text">${text}</div>
+  <div class="drag-icon-container">
+    <i class="fas fa-arrows-alt drag-icon"></i>
+  </div>
+`;
   bubble.style.top = `${positions[i].top}px`;
   bubble.style.left = `${positions[i].left}px`;
   document.body.appendChild(bubble);
@@ -147,7 +152,6 @@ selectedPhrases.forEach((text, i) => {
   bubble.classList.add("in-view"); // <-- 🔥 indispensable
   makeDraggable(bubble);
 });
-
 }
 
 // ✨ Rend les bulles déplaçables par l’utilisateur
@@ -177,3 +181,28 @@ function makeDraggable(el) {
     el.style.cursor = "grab";
   });
 }
+
+// ✅ Envoi vers Google Sheets via Apps Script
+document.getElementById("contact-form")?.addEventListener("submit", function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value,
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbyWy7T8cUsZqyL9qYCIrnvF3o-2nBrpJZWb2vMIK9278iuKhsLs6JylyM0vwEmXgh99xA/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+  .then(res => res.json())
+  .then(response => {
+    alert("Message envoyé !");
+    form.reset();
+  })
+  .catch(err => alert("Erreur : " + err));
+});
