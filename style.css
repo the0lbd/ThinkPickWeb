@@ -306,10 +306,11 @@ section.in-view {
 
 /* Features Grid */
 .features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   margin-top: 4rem;
+  justify-content: center;
 }
 
 .feature-box {
@@ -322,6 +323,9 @@ section.in-view {
   overflow: hidden;
   cursor: pointer;
   group: hover;
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
 }
 
 .feature-box::before {
@@ -379,10 +383,11 @@ section.in-view {
 }
 
 .features-cta {
-  grid-column: 1 / -1;
+  flex-basis: 100%;
   background: var(--gradient-1);
   border: none;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .features-cta .features-link {
@@ -404,6 +409,7 @@ section.in-view {
   background: linear-gradient(135deg, rgba(0, 212, 170, 0.05) 0%, rgba(108, 92, 231, 0.05) 100%);
   border-radius: 32px;
   margin: 4rem 0;
+  text-align: center;
 }
 
 details {
@@ -414,6 +420,10 @@ details {
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
 }
 
 details:hover {
@@ -780,9 +790,9 @@ textarea {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(40px);
-  cursor: grab;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
 }
 
 .sticky-bubble.in-view {
@@ -795,26 +805,6 @@ textarea {
   box-shadow: var(--shadow-xl);
 }
 
-.drag-icon-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.drag-icon {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 8px;
-  border-radius: 50%;
-  cursor: grab;
-  transition: all 0.3s ease;
-}
-
-.drag-icon:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
 
 /* Footer */
 footer {
@@ -823,6 +813,7 @@ footer {
   padding: 3rem 2rem;
   text-align: center;
   color: var(--text-secondary);
+  margin-top: 4rem;
 }
 
 /* Animations */
@@ -873,8 +864,12 @@ footer {
   }
   
   .features-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-box {
+    max-width: 100%;
   }
   
   .iphone-mock {

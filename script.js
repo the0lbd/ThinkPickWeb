@@ -139,48 +139,15 @@ function injectFloatingBubbles() {
   selectedPhrases.forEach((text, i) => {
     const bubble = document.createElement("div");
     bubble.className = "sticky-bubble";
-    bubble.innerHTML = `
-      <div class="bubble-text">${text}</div>
-      <div class="drag-icon-container">
-        <i class="fas fa-arrows-alt drag-icon"></i>
-      </div>
-    `;
+    bubble.innerHTML = `<div class="bubble-text">${text}</div>`;
     bubble.style.top = `${positions[i].top}px`;
     bubble.style.left = `${positions[i].left}px`;
     document.body.appendChild(bubble);
 
     bubble.classList.add("in-view");
-    makeDraggable(bubble);
   });
 }
 
-// ✨ Rend les bulles déplaçables par l’utilisateur
-function makeDraggable(el) {
-  let offsetX = 0;
-  let offsetY = 0;
-  let isDragging = false;
-
-  el.style.cursor = "grab";
-
-  el.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    offsetX = e.clientX - el.offsetLeft;
-    offsetY = e.clientY - el.offsetTop;
-    el.style.cursor = "grabbing";
-    el.style.zIndex = 9999;
-  });
-
-  document.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    el.style.left = `${e.clientX - offsetX}px`;
-    el.style.top = `${e.clientY - offsetY}px`;
-  });
-
-  document.addEventListener("mouseup", () => {
-    isDragging = false;
-    el.style.cursor = "grab";
-  });
-}
 
 // ✅ Envoi vers Google Sheets via Apps Script
 document.getElementById("contact-form")?.addEventListener("submit", function(e) {
