@@ -27,6 +27,7 @@ export function renderMockView() {
         </div>
       </div>
       <div style="font-size: 1.2rem; color: #00d4aa; font-weight: 600;">
+        <div style="font-size: 1.2rem; color: #abcf65; font-weight: 600;">
         <div style="font-size: 0.8rem; color: #a0a0a0;">Aujourd'hui</div>
         02:30
       </div>
@@ -38,6 +39,7 @@ export function renderMockView() {
       </div>
     </div>
     <div style="margin: 1rem 0; height: 1px; background: linear-gradient(90deg, transparent, #00d4aa, transparent);"></div>
+    <div style="margin: 1rem 0; height: 1px; background: linear-gradient(90deg, transparent, #abcf65, transparent);"></div>
   `;
   content.appendChild(matchHeader);
 
@@ -73,7 +75,7 @@ export function renderMockView() {
     overBlock.className = "block";
     overBlock.innerHTML = `
       <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-        <i class="fas fa-arrow-up" style="color: #00d4aa;"></i>
+        <i class="fas fa-arrow-up" style="color: #abcf65;"></i>
         <span>Plus de ${bet.over.value}</span>
       </div>
       <div class="odds">${formatOdds(bet.over.odds)}</div>
@@ -85,7 +87,7 @@ export function renderMockView() {
     underBlock.className = "block";
     underBlock.innerHTML = `
       <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-        <i class="fas fa-arrow-down" style="color: #fd79a8;"></i>
+        <i class="fas fa-arrow-down" style="color: #e74c3c;"></i>
         <span>Moins de ${bet.under.value}</span>
       </div>
       <div class="odds">${formatOdds(bet.under.odds)}</div>
@@ -126,7 +128,7 @@ export function renderMockView() {
         block.className = "block";
         block.innerHTML = `
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-            <i class="fas fa-trophy" style="color: #fdcb6e;"></i>
+            <i class="fas fa-trophy" style="color: #f39c12;"></i>
             <span>${opt.label}</span>
           </div>
           <div class="odds">${formatOdds(opt.odds)}</div>
@@ -141,7 +143,7 @@ export function renderMockView() {
       over.className = "block";
       over.innerHTML = `
         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-          <i class="fas fa-arrow-up" style="color: #00d4aa;"></i>
+          <i class="fas fa-arrow-up" style="color: #abcf65;"></i>
           <span>Plus de ${bet.over.value}</span>
         </div>
         <div class="odds">${formatOdds(bet.over.odds)}</div>
@@ -153,7 +155,7 @@ export function renderMockView() {
       under.className = "block";
       under.innerHTML = `
         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-          <i class="fas fa-arrow-down" style="color: #fd79a8;"></i>
+          <i class="fas fa-arrow-down" style="color: #e74c3c;"></i>
           <span>Moins de ${bet.under.value}</span>
         </div>
         <div class="odds">${formatOdds(bet.under.odds)}</div>

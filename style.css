@@ -1,8 +1,8 @@
 :root {
-  --primary: #00d4aa;
-  --primary-dark: #00b894;
-  --secondary: #6c5ce7;
-  --accent: #fd79a8;
+  --primary: #abcf65;
+  --primary-dark: #9bb856;
+  --secondary: #2c3e50;
+  --accent: #e74c3c;
   --dark-bg: #0a0a0a;
   --card-bg: #1a1a1a;
   --card-hover: #252525;
@@ -10,8 +10,8 @@
   --text-secondary: #a0a0a0;
   --text-muted: #666666;
   --border: #2a2a2a;
-  --gradient-1: linear-gradient(135deg, #00d4aa 0%, #6c5ce7 100%);
-  --gradient-2: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+  --gradient-1: linear-gradient(135deg, #abcf65 0%, #2c3e50 100%);
+  --gradient-2: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);

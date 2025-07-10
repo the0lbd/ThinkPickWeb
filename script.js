@@ -107,16 +107,16 @@ document.getElementById("cart-bubble")?.addEventListener("click", () => {
 // ✅ Bulles aléatoires et déplaçables
 function injectFloatingBubbles() {
   const phrases = [
-    "🎯 L'intelligence artificielle au service de vos paris",
-    "📊 73% de précision sur nos prédictions",
-    "⚡ Analyse en temps réel de 50+ variables",
-    "🧠 Algorithmes d'apprentissage automatique",
-    "💎 Optimisation automatique des cotes",
-    "🔍 Détection d'opportunités d'arbitrage",
-    "📈 Gestion intelligente du bankroll",
-    "🎲 Simulation Monte Carlo intégrée",
-    "🔐 Données chiffrées end-to-end",
-    "⭐ ROI garanti ou remboursement"
+    "📊 Statistiques complètes de tous les joueurs NBA",
+    "⚡ Cotes en temps réel de 15+ bookmakers",
+    "📈 Historique des performances depuis 2010",
+    "🎯 Comparateur de cotes automatique",
+    "🔔 Alertes personnalisées sur vos favoris",
+    "📋 Plus de 50 métriques par joueur",
+    "🏀 Données officielles des ligues",
+    "⏱️ Mises à jour en temps réel",
+    "🔍 Recherche avancée par critères",
+    "📱 Interface optimisée mobile et desktop"
   ];
 
   const positions = [
