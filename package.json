@@ -1,0 +1,15 @@
+{
+  "name": "thinkpick",
+  "version": "1.0.0",
+  "description": "ThinkPick - L'outil des parieurs intelligents",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
