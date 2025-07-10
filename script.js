@@ -186,18 +186,14 @@ function makeDraggable(el) {
 document.getElementById("contact-form")?.addEventListener("submit", function(e) {
   e.preventDefault();
   const form = e.target;
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-    message: form.message.value,
-  };
+  const formData = new FormData();
+  formData.append("name", form.name.value);
+  formData.append("email", form.email.value);
+  formData.append("message", form.message.value);
 
-  fetch("https://script.google.com/macros/s/AKfycbwUpxK6PmQkYoJFF1QiHo0a0MBAe22Xsw3tDW7v2K7noCp22y2I_ldYU6QQSwB84ps-WQ/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzIV8AqLWr6bo9tvxo8bUsZfdyeJ5yqB6fmsU7W4zHlrdWLYzHBY6YwjPwErcKBLym-VA/exec", {
     method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json",
-    },
+    body: formData
   })
   .then(res => res.json())
   .then(response => {
