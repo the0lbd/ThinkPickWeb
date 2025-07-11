@@ -31,9 +31,16 @@ body {
   line-height: 1.6;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  position: relative;
   font-feature-settings: 'kern' 1, 'liga' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+html, body {
+  max-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Enhanced Navigation */
@@ -311,21 +318,23 @@ section.in-view {
   gap: 1.5rem;
   margin-top: 4rem;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch; /* 🔥 Étire tous les enfants à la même hauteur */
 }
 
 .feature-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: var(--card-bg);
   border: 1px solid var(--border);
   padding: 2.5rem;
   border-radius: 20px;
-  position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
   cursor: pointer;
-  group: hover;
   flex: 0 1 calc(25% - 1.125rem);
   min-width: 250px;
+  min-height: 520px; /* 🔒 force toutes les box à avoir cette même hauteur */
+  height: 100%; /* 🔒 Important pour stretch */
 }
 
 .feature-box::before {
@@ -361,15 +370,6 @@ section.in-view {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-}
-
-.feature-title::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: var(--primary);
-  border-radius: 50%;
-  box-shadow: 0 0 20px var(--primary);
 }
 
 .feature-hover {
@@ -879,11 +879,6 @@ footer {
     width: 350px;
     height: 760px;
     transform: none;
-  }
-  
-  .sticky-bubble {
-    max-width: 280px;
-    padding: 1rem 1.5rem 0.75rem;
   }
   
   .hero {

@@ -56,27 +56,32 @@
     </div>
   </header>
 
-  <!-- Bulle 1 -->
-  <div id="bubble-1" class="scroll-bubble placeholder"></div>
-
   <section id="about" class="section">
-    <!-- Bulle 2 -->
-    <div class="sticky-bubble" style="top: 1100px; left: 80px;">
-      <div class="bubble-text">📊 Statistiques complètes de tous les joueurs NBA</div>
-    </div>
     <h2>Statistiques. Cotes. Performance.</h2>
     <p>
       Dans un univers où l'information est reine, ThinkPick centralise toutes les données essentielles. 
       Notre plateforme agrège les statistiques détaillées des joueurs, les performances historiques et les meilleures cotes du marché 
       pour vous offrir une vue d'ensemble complète. Fini les recherches fastidieuses, toute l'information en un seul endroit.
     </p>
+
+    <!-- Bulles intégrées dans le flux -->
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 2rem; gap: 1rem;">
+      <div class="sticky-bubble">
+        <div class="bubble-text">📊 Statistiques complètes de tous les joueurs NBA</div>
+      </div>
+      <div class="sticky-bubble">
+        <div class="bubble-text">⚡ Cotes en temps réel de 15+ bookmakers</div>
+      </div>
+      <div class="sticky-bubble">
+        <div class="bubble-text">📈 Plus de 50 métriques par joueur</div>
+      </div>
+      <div class="sticky-bubble">
+        <div class="bubble-text">🏀 Données officielles des ligues</div>
+      </div>
+    </div>
   </section>
 
   <section id="features" class="section">
-    <!-- Bulle 3 -->
-    <div class="sticky-bubble" style="top: 1450px; left: 60px;">
-      <div class="bubble-text">⚡ Cotes en temps réel de 15+ bookmakers</div>
-    </div>
     <h2>Fonctionnalités</h2>
     <div class="features-grid">
       <div class="feature-box">
@@ -133,8 +138,7 @@
   </section>
 
   <section id="faq" class="faq section">
-    <!-- Bulle 4 -->
-    <div class="sticky-bubble" style="top: 2200px; left: window.innerWidth - 340px;">
+    <div class="sticky-bubble" style="margin-bottom: 2rem;">
       <div class="bubble-text">📈 Historique des performances depuis 2010</div>
     </div>
     <h2>FAQ</h2>
@@ -169,8 +173,7 @@
   </section>
 
   <section id="contact" class="contact section">
-    <!-- Bulle 5 -->
-    <div class="sticky-bubble" style="top: 2800px; left: 80px;">
+    <div class="sticky-bubble" style="margin-bottom: 2rem;">
       <div class="bubble-text">🔔 Alertes personnalisées sur vos favoris</div>
     </div>
     <h2>Contact</h2>
@@ -191,7 +194,6 @@
   </footer>
 
   <script>
-    // Enhanced navbar scroll effect
     window.addEventListener('scroll', () => {
       const navbar = document.querySelector('.navbar');
       if (window.scrollY > 50) {

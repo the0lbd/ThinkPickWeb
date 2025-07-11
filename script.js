@@ -106,6 +106,12 @@ document.getElementById("cart-bubble")?.addEventListener("click", () => {
 
 // ✅ Bulles aléatoires et déplaçables
 function injectFloatingBubbles() {
+  // ❌ N'affiche pas sur demo.html
+  if (window.location.pathname.includes("demo.html")) return;
+
+  // ❌ N'affiche pas sur téléphone
+  if (window.innerWidth < 500) return;
+
   const phrases = [
     "📊 Statistiques complètes de tous les joueurs NBA",
     "⚡ Cotes en temps réel de 15+ bookmakers",
@@ -127,7 +133,6 @@ function injectFloatingBubbles() {
     { top: 1600, left: 80 }
   ];
 
-  // Sélection aléatoire sans doublons
   const used = new Set();
   while (used.size < positions.length) {
     const i = Math.floor(Math.random() * phrases.length);
