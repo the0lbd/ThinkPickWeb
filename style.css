@@ -312,13 +312,21 @@ section.in-view {
 }
 
 /* Features Grid */
-.features-grid {
+.features-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 4rem;
   margin-top: 4rem;
-  justify-content: space-between;
-  align-items: stretch; /* 🔥 Étire tous les enfants à la même hauteur */
+  min-height: 600px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+  flex: 1;
+  max-width: 600px;
 }
 
 .feature-box {
@@ -331,10 +339,8 @@ section.in-view {
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  flex: 0 1 calc(25% - 1.125rem);
-  min-width: 250px;
-  min-height: 520px; /* 🔒 force toutes les box à avoir cette même hauteur */
-  height: 100%; /* 🔒 Important pour stretch */
+  min-height: 280px;
+  position: relative;
 }
 
 .feature-box::before {
@@ -382,27 +388,47 @@ section.in-view {
   overflow: visible;
 }
 
-.features-cta {
-  flex: 1 1 100%;
-  background: var(--gradient-1);
-  border: none;
-  text-align: center;
-  margin-top: 2rem;
-  order: 5;
+.demo-phone-container {
+  flex: 0 0 auto;
+  transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.features-cta .features-link {
-  display: block;
-  padding: 2rem;
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.3rem;
-  transition: transform 0.3s ease;
+.demo-phone-container:hover {
+  transform: perspective(1000px) rotateY(-10deg) rotateX(2deg);
 }
 
-.features-cta:hover .features-link {
-  transform: scale(1.02);
+.demo-phone-container .iphone-mock {
+  width: 320px;
+  height: 693px;
+  margin: 0;
+  transform: none;
+}
+
+.demo-phone-container .app-screen {
+  padding: 1rem;
+  font-size: 0.85rem;
+}
+
+.demo-phone-container .mock-match {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.demo-phone-container .mock-odds .block {
+  padding: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.demo-phone-container .odds-title {
+  font-size: 0.9rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.demo-phone-container .cart-bubble {
+  width: 48px;
+  height: 48px;
+  font-size: 0.9rem;
 }
 
 /* FAQ Section */
@@ -866,13 +892,28 @@ footer {
     padding: 4rem 1rem;
   }
   
-  .features-grid {
+  .features-container {
     flex-direction: column;
-    align-items: center;
+    gap: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    max-width: 100%;
   }
   
   .feature-box {
-    max-width: 100%;
+    min-height: 200px;
+  }
+  
+  .demo-phone-container {
+    transform: none;
+  }
+  
+  .demo-phone-container .iphone-mock {
+    width: 280px;
+    height: 607px;
   }
   
   .iphone-mock {

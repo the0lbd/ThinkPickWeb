@@ -83,56 +83,80 @@
 
   <section id="features" class="section">
     <h2>Fonctionnalités</h2>
-    <div class="features-grid">
-      <div class="feature-box">
-        <div class="feature-title">
-          <i class="fas fa-chart-bar"></i>
-          Statistiques Détaillées
+    <div class="features-container">
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-title">
+            <i class="fas fa-chart-bar"></i>
+            Statistiques Détaillées
+          </div>
+          <div class="feature-hover">
+            Accédez aux statistiques complètes de tous les joueurs : moyennes saisonnières, performances récentes, 
+            historique des confrontations, statistiques à domicile/extérieur.
+          </div>
         </div>
-        <div class="feature-hover">
-          Accédez aux statistiques complètes de tous les joueurs : moyennes saisonnières, performances récentes, 
-          historique des confrontations, statistiques à domicile/extérieur. Plus de 50 métriques différentes 
-          pour analyser les performances sous tous les angles.
+        <div class="feature-box">
+          <div class="feature-title">
+            <i class="fas fa-exchange-alt"></i>
+            Comparateur de Cotes
+          </div>
+          <div class="feature-hover">
+            Comparez instantanément les cotes de 15+ bookmakers pour chaque pari. 
+            Identifiez automatiquement les meilleures opportunités en temps réel.
+          </div>
         </div>
-      </div>
-      <div class="feature-box">
-        <div class="feature-title">
-          <i class="fas fa-exchange-alt"></i>
-          Comparateur de Cotes
+        <div class="feature-box">
+          <div class="feature-title">
+            <i class="fas fa-history"></i>
+            Historique des Performances
+          </div>
+          <div class="feature-hover">
+            Consultez l'historique complet des matchs et performances individuelles. 
+            Analysez les tendances sur plusieurs saisons.
+          </div>
         </div>
-        <div class="feature-hover">
-          Comparez instantanément les cotes de 15+ bookmakers pour chaque pari. 
-          Identifiez automatiquement les meilleures opportunités et suivez l'évolution 
-          des cotes en temps réel. Ne ratez plus jamais une cote avantageuse.
-        </div>
-      </div>
-      <div class="feature-box">
-        <div class="feature-title">
-          <i class="fas fa-history"></i>
-          Historique des Performances
-        </div>
-        <div class="feature-hover">
-          Consultez l'historique complet des matchs et performances individuelles. 
-          Analysez les tendances sur plusieurs saisons, les statistiques head-to-head 
-          et les performances dans différentes conditions de jeu.
-        </div>
-      </div>
-      <div class="feature-box">
-        <div class="feature-title">
-          <i class="fas fa-bell"></i>
-          Alertes Personnalisées
-        </div>
-        <div class="feature-hover">
-          Configurez des alertes personnalisées pour vos joueurs et équipes favoris. 
-          Recevez des notifications en temps réel sur les changements de cotes, 
-          les blessures, les compositions d'équipe et les statistiques remarquables.
+        <div class="feature-box">
+          <div class="feature-title">
+            <i class="fas fa-bell"></i>
+            Alertes Personnalisées
+          </div>
+          <div class="feature-hover">
+            Configurez des alertes personnalisées pour vos joueurs et équipes favoris. 
+            Recevez des notifications en temps réel.
+          </div>
         </div>
       </div>
-      <div class="feature-box features-cta">
-        <a href="demo.html" class="features-link">
-          <i class="fas fa-rocket"></i>
-          Explorez les statistiques et cotes en temps réel
-        </a>
+      
+      <div class="demo-phone-container">
+        <div class="iphone-mock">
+          <div class="app-screen" id="features-demo-screen"></div>
+          
+          <div class="popup-screen hidden" id="features-popup-screen">
+            <div class="popup-header">
+              <span id="features-popup-title">Performances récentes</span>
+              <button class="close-popup" onclick="closeFeaturesPopup()">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="popup-content" id="features-popup-content"></div>
+          </div>
+          
+          <div class="cart-bubble" id="features-cart-bubble">1.91</div>
+          
+          <div class="popup-screen hidden" id="features-checkout-view">
+            <div class="popup-header">
+              <span>
+                <i class="fas fa-shopping-cart"></i>
+                Votre sélection
+              </span>
+              <button class="close-popup" onclick="closeFeaturesCheckout()">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="popup-content" id="features-checkout-list"></div>
+            <div class="total" id="features-checkout-total"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
