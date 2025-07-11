@@ -1,8 +1,6 @@
 import { lebronBets, lakersBets } from './data.js';
 import { addToCart } from '../script.js';
 
-const content = document.getElementById("main-screen");
-
 // Fonction pour gérer l'ajout/retrait de sélection
 function toggleBet(element, label, value) {
   element.classList.toggle("selected");
@@ -12,7 +10,14 @@ function toggleBet(element, label, value) {
 // Format arrondi en x.xx
 const formatOdds = (value) => parseFloat(value).toFixed(2);
 
-export function renderMockView() {
+export function renderMockView(targetElement = null) {
+  const content = targetElement || document.getElementById("main-screen");
+  
+  if (!content) {
+    console.error("Target element not found for renderMockView");
+    return;
+  }
+  
   content.innerHTML = "";
 
   // HEADER MATCH

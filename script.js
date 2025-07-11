@@ -31,21 +31,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ✅ Render demo in features section
 function renderFeaturesDemo() {
-  import("./mock/renderMock.js").then(({ renderMockView }) => {
-    const originalContent = document.getElementById("main-screen");
-    const featuresContent = document.getElementById("features-demo-screen");
-    
-    // Temporarily switch the target
-    const tempId = originalContent?.id;
-    if (originalContent) originalContent.id = "temp-main-screen";
-    featuresContent.id = "main-screen";
-    
-    // Render the mock
-    renderMockView();
-    
-    // Restore original IDs
-    featuresContent.id = "features-demo-screen";
-    if (originalContent) originalContent.id = tempId;
+  const featuresContent = document.getElementById("features-demo-screen");
+  if (featuresContent) {
+    import("./mock/renderMock.js").then(({ renderMockView }) => {
+      renderMockView(featuresContent);
+    });
+  }
+}
   });
 }
 
