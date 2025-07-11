@@ -40,7 +40,7 @@ function renderFeaturesDemo() {
 }
 
 // ✅ Popup stats
-window.openPopup = function (stat) {
+window.openPopup = async function (stat) {
   const popup = document.getElementById("popup-screen") || document.getElementById("features-popup-screen");
   const title = document.getElementById("popup-title") || document.getElementById("features-popup-title");
   const container = document.getElementById("popup-content") || document.getElementById("features-popup-content");
@@ -48,18 +48,17 @@ window.openPopup = function (stat) {
   title.textContent = `Performances – ${stat}`;
   container.innerHTML = "";
 
-  import("./mock/data.js").then(({ lebronStats }) => {
-    lebronStats.forEach(match => {
-      const div = document.createElement("div");
-      div.className = "match-stat";
-      const vs = match.home ? `Lakers vs ${match.opponent}` : `${match.opponent} vs Lakers`;
-      div.innerHTML = `
-        <strong>${match.date}</strong><br/>
-        ${vs}<br/>
-        ${stat} : <span>${match.lebronStats[stat]}</span>
-      `;
-      container.appendChild(div);
-    });
+  const { lebronStats } = await import("./mock/data.js");
+  lebronStats.forEach(match => {
+    const div = document.createElement("div");
+    div.className = "match-stat";
+    const vs = match.home ? `Lakers vs ${match.opponent}` : `${match.opponent} vs Lakers`;
+    div.innerHTML = `
+      <strong>${match.date}</strong><br/>
+      ${vs}<br/>
+      ${stat} : <span>${match.lebronStats[stat]}</span>
+    `;
+    container.appendChild(div);
   });
 
   popup.classList.remove("hidden");
