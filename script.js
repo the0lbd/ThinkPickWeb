@@ -38,8 +38,6 @@ function renderFeaturesDemo() {
     });
   }
 }
-  });
-}
 
 // ✅ Popup stats
 window.openPopup = function (stat) {
@@ -205,7 +203,6 @@ function injectFloatingBubbles() {
     bubble.classList.add("in-view");
   });
 }
-
 
 // ✅ Envoi vers Google Sheets via Apps Script
 document.getElementById("contact-form")?.addEventListener("submit", function(e) {
