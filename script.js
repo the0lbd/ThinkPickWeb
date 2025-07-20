@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
     renderFeaturesDemo();
   }
 
-  injectFloatingBubbles();
+  // injectFloatingBubbles(); // Désactivé pour ne plus générer de bulles dynamiques
 });
 
 // ✅ Render demo in features section
@@ -152,46 +152,6 @@ function showCheckout(isFeatures = false) {
 
   const sum = cart.reduce((acc, b) => acc * b.value, 1);
   total.innerHTML = `<strong>Cote totale : ${sum.toFixed(2)}</strong>`;
-}
-
-// ✅ Bulles aléatoires et déplaçables
-function injectFloatingBubbles() {
-  const bubbleMessages = [
-    "🎯 Analyses prédictives avancées",
-    "📈 Tendances en temps réel", 
-    "🏀 Stats NBA complètes",
-    "💰 Meilleures cotes du marché",
-    "⚡ Notifications instantanées"
-  ];
-
-  bubbleMessages.forEach((message, index) => {
-    setTimeout(() => {
-      const bubble = document.createElement("div");
-      bubble.className = "sticky-bubble";
-      bubble.innerHTML = `<div class="bubble-text">${message}</div>`;
-      
-      // Position aléatoire
-      const randomX = Math.random() * (window.innerWidth - 300);
-      const randomY = Math.random() * (window.innerHeight - 100) + 100;
-      
-      bubble.style.position = "fixed";
-      bubble.style.left = randomX + "px";
-      bubble.style.top = randomY + "px";
-      bubble.style.zIndex = "999";
-      
-      document.body.appendChild(bubble);
-      
-      // Animation d'apparition
-      setTimeout(() => bubble.classList.add("in-view"), 100);
-      
-      // Suppression après 4 secondes
-      setTimeout(() => {
-        bubble.style.opacity = "0";
-        setTimeout(() => bubble.remove(), 500);
-      }, 4000);
-      
-    }, index * 800);
-  });
 }
 
 // ✅ Envoi vers Google Sheets via Apps Script

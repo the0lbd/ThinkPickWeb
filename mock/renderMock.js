@@ -24,27 +24,29 @@ export function renderMockView(targetElement = null) {
   const matchHeader = document.createElement("div");
   matchHeader.className = "mock-match";
   matchHeader.innerHTML = `
-    <div style="display: flex; justify-content: space-between; font-weight: bold;">
-      <div style="text-align: left;">
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <div style="width: 32px; height: 32px; background: #552583; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FDB927; font-weight: bold; font-size: 0.8rem;">LAL</div>
-          <div>Lakers<br/><span style="font-weight: normal; color: #a0a0a0;">Los Angeles</span></div>
+    <div class="match-header-compact">
+      <div class="match-date-hour">
+        <span class="match-date">Aujourd'hui</span>
+        <span class="match-hour">02:30</span>
+      </div>
+      <div class="match-teams-row">
+        <div class="team team-left">
+          <div class="team-badge" style="background:#552583; color:#FDB927;">LAL</div>
+          <div class="team-info">
+            <div class="team-name">Lakers</div>
+            <div class="team-city">Los Angeles</div>
+          </div>
         </div>
-      </div>
-      <div style="font-size: 1.2rem; color: #00d4aa; font-weight: 600;">
-        <div style="font-size: 1.2rem; color: #abcf65; font-weight: 600;">
-        <div style="font-size: 0.8rem; color: #a0a0a0;">Aujourd'hui</div>
-        02:30
-      </div>
-      <div style="text-align: right;">
-        <div style="display: flex; align-items: center; gap: 0.5rem; flex-direction: row-reverse;">
-          <div style="width: 32px; height: 32px; background: #007A33; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.8rem;">BOS</div>
-          <div>Celtics<br/><span style="font-weight: normal; color: #a0a0a0;">Boston</span></div>
+        <div class="vs-separator">vs</div>
+        <div class="team team-right">
+          <div class="team-badge" style="background:#007A33; color:#fff;">BOS</div>
+          <div class="team-info">
+            <div class="team-name">Celtics</div>
+            <div class="team-city">Boston</div>
+          </div>
         </div>
       </div>
     </div>
-    <div style="margin: 1rem 0; height: 1px; background: linear-gradient(90deg, transparent, #00d4aa, transparent);"></div>
-    <div style="margin: 1rem 0; height: 1px; background: linear-gradient(90deg, transparent, #abcf65, transparent);"></div>
   `;
   content.appendChild(matchHeader);
 
