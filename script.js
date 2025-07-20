@@ -156,51 +156,8 @@ function showCheckout(isFeatures = false) {
 
 // ✅ Bulles aléatoires et déplaçables
 function injectFloatingBubbles() {
-  // ❌ N'affiche pas sur demo.html
-  if (window.location.pathname.includes("demo.html")) return;
-
-  // ❌ N'affiche pas sur téléphone
-  if (window.innerWidth < 500) return;
-
-  const phrases = [
-    "📊 Statistiques complètes de tous les joueurs NBA",
-    "⚡ Cotes en temps réel de 15+ bookmakers",
-    "📈 Historique des performances depuis 2010",
-    "🎯 Comparateur de cotes automatique",
-    "🔔 Alertes personnalisées sur vos favoris",
-    "📋 Plus de 50 métriques par joueur",
-    "🏀 Données officielles des ligues",
-    "⏱️ Mises à jour en temps réel",
-    "🔍 Recherche avancée par critères",
-    "📱 Interface optimisée mobile et desktop"
-  ];
-
-  const positions = [
-    { top: 200, left: 50 },
-    { top: 400, left: window.innerWidth - 360 },
-    { top: 900, left: 60 },
-    { top: 1300, left: window.innerWidth - 340 },
-    { top: 1600, left: 80 }
-  ];
-
-  const used = new Set();
-  while (used.size < positions.length) {
-    const i = Math.floor(Math.random() * phrases.length);
-    used.add(i);
-  }
-
-  const selectedPhrases = Array.from(used).map(i => phrases[i]);
-
-  selectedPhrases.forEach((text, i) => {
-    const bubble = document.createElement("div");
-    bubble.className = "sticky-bubble";
-    bubble.innerHTML = `<div class="bubble-text">${text}</div>`;
-    bubble.style.top = `${positions[i].top}px`;
-    bubble.style.left = `${positions[i].left}px`;
-    document.body.appendChild(bubble);
-
-    bubble.classList.add("in-view");
-  });
+  // Function disabled - only keeping the two bubbles in the HTML
+  return;
 }
 
 // ✅ Envoi vers Google Sheets via Apps Script
