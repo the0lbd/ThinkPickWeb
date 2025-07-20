@@ -530,6 +530,10 @@ textarea {
   resize: vertical;
 }
 
+form button[type="submit"], form .btn {
+  align-self: center;
+}
+
 /* Demo Page Styles */
 .demo-nav {
   position: fixed;
