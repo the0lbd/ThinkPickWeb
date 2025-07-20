@@ -156,36 +156,7 @@ function showCheckout(isFeatures = false) {
 
 // ✅ Bulles aléatoires et déplaçables
 function injectFloatingBubbles() {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-
-  // Create floating bubbles with random positions and delays
-  for (let i = 0; i < 8; i++) {
-    const bubble = document.createElement('div');
-    bubble.className = 'sticky-bubble';
-    bubble.style.position = 'absolute';
-    bubble.style.top = Math.random() * 80 + 10 + '%';
-    bubble.style.left = Math.random() * 80 + 10 + '%';
-    bubble.style.animationDelay = Math.random() * 3 + 's';
-    bubble.style.zIndex = '1';
-    
-    const messages = [
-      '🎯 Analyses prédictives avancées',
-      '📈 Tendances en temps réel',
-      '🏀 Stats NBA complètes',
-      '⚡ Notifications instantanées',
-      '🔍 Comparateur intelligent',
-      '📊 Historiques détaillés',
-      '🎲 Probabilités calculées',
-      '💡 Conseils personnalisés'
-    ];
-    
-    bubble.innerHTML = `<div class="bubble-text">${messages[i]}</div>`;
-    hero.appendChild(bubble);
-    
-    // Add intersection observer for each bubble
-    observer.observe(bubble);
-  }
+  // Function disabled - keeping only the 2 static bubbles in HTML
 }
 
 // ✅ Envoi vers Google Sheets via Apps Script
